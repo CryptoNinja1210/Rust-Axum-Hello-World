@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "src/main.rs",
+        "src": "fullstack-axum/src",
         "use": "vercel-rust@4.0.6",
         "config": { "runtime": "vercel-rust@4.0.6" }
       },
@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "src/main.rs"
+        "dest": "fullstack-axum/src"
       }
     ],
     "outputDirectory": "ui/staticfiles"
