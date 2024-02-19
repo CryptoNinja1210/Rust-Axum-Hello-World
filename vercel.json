@@ -1,7 +1,28 @@
 {
-  "functions": {
-    "api/src/*.rs": {
-      "runtime": "vercel-rust@4.0.6"
-    }
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/main.rs",
+        "use": "@vercel/rust",
+        "config": { "runtime": "vercel-rust@4.0.6" }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "ui/staticfiles"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "src/main.rs"
+      }
+    ],
+    "outputDirectory": "ui/staticfiles"
   }
-}
