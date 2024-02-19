@@ -3,7 +3,7 @@
     "builds": [
       {
         "src": "src/main.rs",
-        "use": "@vercel/rust",
+        "use": "vercel-rust@4.0.6",
         "config": { "runtime": "vercel-rust@4.0.6" }
       },
       {
